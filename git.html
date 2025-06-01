@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Nedir? - FtechTalks </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Source Serif 4', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .content-title, .section-title {
+            font-family: 'Source Serif 4', serif;
+        }
+        .content-text {
+             font-family: 'Inter', sans-serif;
+        }
+        /* Git komutları için açık tema stili */
+        .command {
+            font-weight: bold;
+            color: #B91C1C; /* Tailwind red-700 */
+            background-color: #F3F4F6; /* Tailwind gray-100 */
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            border: 1px solid #E5E7EB; /* Tailwind gray-200 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center">
+            <a href="index.html" class="mb-2 sm:mb-0">
+                <img src="img/logo3.png" alt="FtechTalks Logo" class="h-10">
+            </a>
+            <div class="flex space-x-4">
+                <a href="#" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-youtube fa-lg"></i></a>
+                <a href="https://github.com/fa2uk" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="https://www.instagram.com/fa2uk0/" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://tr.linkedin.com/in/%C3%B6mer-faruk-arang%C3%BCl-40201b325" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8 border border-gray-200">
+            <div class="flex flex-col md:flex-row items-center mb-6">
+                <img src="img/git.jpg" alt="Git Nedir?" class="w-full md:w-1/3 lg:w-1/4 h-auto object-contain rounded-md mb-4 md:mb-0 md:mr-8 shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/300x200/EFEFEF/AAAAAA?text=Git+Resmi&font=Inter';">
+                <h1 class="text-3xl md:text-4xl font-bold content-title text-gray-700 text-center md:text-left">Git Nedir ve Temel Komutları</h1>
+            </div>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-3 section-title text-gray-700 border-b border-gray-300 pb-2">1. Git Repository (Repo) Nedir?</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed content-text">
+                    Git repository (repo), bir projenin tüm dosyalarını, geçmiş sürümlerini ve bu dosyalarda yapılan değişikliklerin kaydını tutan bir veri deposudur. Git ile bir repo oluşturduğunuzda, her dosya ve değişiklik tarihçesiyle birlikte saklanır.
+                </p>
+                <ul class="list-disc list-inside text-gray-600 space-y-2 pl-4">
+                    <li><code class="command">git init</code>: Yeni bir Git deposu başlatmak.</li>
+                    <li><code class="command">git clone [repo-url]</code>: Uzak bir Git reposunun bir kopyasını almak.</li>
+                </ul>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-3 section-title text-gray-700 border-b border-gray-300 pb-2">2. Git Commit</h2>
+                {/* Paragraf içindeki komut adı düz metin olarak değiştirildi */}
+                <p class="text-gray-600 mb-4 leading-relaxed content-text">
+                    "git commit" komutu, yapılan değişiklikleri kaydetmek için kullanılır. Git, değişiklikleri takip eder ve bunları kaydetmek için commit (yazılımın anlık durumu) oluşturur.
+                </p>
+                <ul class="list-disc list-inside text-gray-600 space-y-2 pl-4">
+                    <li><code class="command">git add [dosya-adi]</code>: Değiştirilen dosyaları staging alanına ekler.</li>
+                    <li><code class="command">git commit -m "Mesaj"</code>: Staging alanındaki dosyalar için bir commit mesajı ile değişiklikleri kaydeder.</li>
+                    <li><code class="command">git status</code>: Çalışma alanındaki ve staging alanındaki dosyaların durumunu gösterir.</li>
+                </ul>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-3 section-title text-gray-700 border-b border-gray-300 pb-2">3. Git Push</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed content-text">
+                    "git push" komutu, yerel (local) değişikliklerinizi uzak (remote) depoya göndermek için kullanılır. Bu işlem, başkalarının da bu değişikliklere erişmesini sağlar.
+                </p>
+                <ul class="list-disc list-inside text-gray-600 space-y-2 pl-4">
+                    <li><code class="command">git push [remote] [branch]</code>: Uzak depoya değişikliklerinizi gönderir.</li>
+                </ul>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-3 section-title text-gray-700 border-b border-gray-300 pb-2">4. Git Pull</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed content-text">
+                    "git pull" komutu, uzak depodaki değişiklikleri yerel bilgisayarınıza alır. Bu komut, başkalarının yaptığı değişiklikleri almak için kullanılır ve yerel deponuzu güncel tutar.
+                </p>
+                <ul class="list-disc list-inside text-gray-600 space-y-2 pl-4">
+                    <li><code class="command">git pull [remote] [branch]</code>: Uzak depodan yerel deponuza değişiklikleri alır.</li>
+                </ul>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-3 section-title text-gray-700 border-b border-gray-300 pb-2">5. Git Branch</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed content-text">
+                    "git branch" komutu, farklı iş akışları veya özellikler için farklı dallar (branches) oluşturmanıza ve yönetmenize olanak tanır.
+                </p>
+                <ul class="list-disc list-inside text-gray-600 space-y-2 pl-4">
+                    <li><code class="command">git branch</code>: Mevcut dalları listelemek.</li>
+                    <li><code class="command">git checkout [branch-adi]</code>: Farklı bir dala geçmek.</li>
+                    <li><code class="command">git merge [branch-adi]</code>: Bir dalı başka bir dala birleştirir.</li>
+                </ul>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-3 section-title text-gray-700 border-b border-gray-300 pb-2">6. Git Log</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed content-text">
+                    "git log" komutu, commit geçmişini görmek için kullanılır. Bu komut, proje üzerindeki tüm commit'leri ve bunların detaylarını gösterir.
+                </p>
+                <ul class="list-disc list-inside text-gray-600 space-y-2 pl-4">
+                    <li><code class="command">git log</code>: Commit geçmişini gösterir.</li>
+                </ul>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-3 section-title text-gray-700 border-b border-gray-300 pb-2">7. Git Reset</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed content-text">
+                    "git reset" komutu, önceki bir commit'e dönmek için kullanılır. Bu komut, yapılan değişiklikleri geri almak için yararlıdır.
+                </p>
+                <ul class="list-disc list-inside text-gray-600 space-y-2 pl-4">
+                    <li><code class="command">git reset --hard [commit-id]</code>: Verilen commit'e geri dönmenizi sağlar.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold mb-3 section-title text-gray-700 border-b border-gray-300 pb-2">8. Git Diff</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed content-text">
+                    "git diff" komutu, yapılan değişikliklerin karşılaştırılmasını sağlar. Bu komut, hangi satırların değiştiğini ve ne tür değişiklikler yapıldığını gösterir.
+                </p>
+                <ul class="list-disc list-inside text-gray-600 space-y-2 pl-4">
+                    <li><code class="command">git diff</code>: Çalışma alanındaki değişiklikleri gösterir.</li>
+                </ul>
+            </section>
+             <div class="mt-8 text-center">
+                <a href="index.html" class="inline-block bg-red-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-red-600 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    <i class="fas fa-arrow-left mr-2"></i> Ana Sayfaya Dön
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <div class="container mx-auto px-4">
+            <p>&copy; <span id="currentYear"></span> FtechTalks. Tüm hakları saklıdır.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-youtube fa-lg"></i></a>
+                <a href="https://github.com/fa2uk" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="https://www.instagram.com/fa2uk0/" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://tr.linkedin.com/in/%C3%B6mer-faruk-arang%C3%BCl-40201b325" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // Font Awesome integrity düzeltmesi scripti kaldırıldı, çünkü HTML'de düzeltildi.
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşletim Sistemleri - FtechTalks </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Source Serif 4', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .content-title, .section-title { /* Ana başlık ve bölüm başlıkları için */
+            font-family: 'Source Serif 4', serif;
+        }
+        .content-text { /* Paragraf metinleri için */
+             font-family: 'Inter', sans-serif;
+        }
+        /* Madde işaretli listeler için ek stiller */
+        .custom-list li {
+            position: relative;
+            padding-left: 1.5em; /* Madde işareti için yer */
+            margin-bottom: 0.5em;
+        }
+        .custom-list li::before {
+            content: '•'; /* Madde işareti */
+            position: absolute;
+            left: 0;
+            color: #EF4444; /* Tailwind red-500 */
+            font-weight: bold;
+        }
+        .image-caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem; /* text-sm */
+            color: #6B7280; /* gray-500 */
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center">
+            <a href="index.html" class="mb-2 sm:mb-0">
+                <img src="img/logo3.png" alt="FtechTalks Logo" class="h-10">
+            </a>
+            <div class="flex space-x-4">
+                <a href="#" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-youtube fa-lg"></i></a>
+                <a href="https://github.com/fa2uk" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="https://www.instagram.com/fa2uk0/" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://tr.linkedin.com/in/%C3%B6mer-faruk-arang%C3%BCl-40201b325" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <article class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8 border border-gray-200">
+            <div class="mb-8 pb-4 border-b border-gray-300">
+                <img src="img/isletim.jpg" alt="İşletim Sistemi Ana Görseli" class="w-full md:w-2/3 lg:w-1/2 h-auto object-cover rounded-md mb-4 mx-auto shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/600x350/EFEFEF/AAAAAA?text=Resim+Yüklenemedi&font=Inter';">
+                <h1 class="text-3xl md:text-4xl font-bold content-title text-gray-700 text-center mb-2">İşletim Sistemi Nedir?</h1>
+                <p class="text-gray-600 leading-relaxed content-text text-center">
+                    İşletim sistemi, bir bilgisayar programıdır. Temel görevi bilgisayar parçaları arasındaki ilişkiyi düzenlemek ve aralarında bilgi alışverişi yapmasını sağlamaktır. Yani bir işletim sistemi; temel sistem işlemlerinden, uygulama programlarını çalıştırmaktan ve bilgisayar donanımının doğrudan denetimi ve yönetiminden sorumlu olan bir sistem yazılımıdır. İşletim sistemleri, bir donanımı belli bir amaç doğrultusunda programlayabilme nitelikleriyle değerlendirilirler. Bu açıdan bir işletim sistemi sadece bilgisayar, mobil araçlar, video oyun konsolları, cep telefonları ve web sunucularında değil; arabalarda, televizyonlarda, ev sinema sistemlerinde, beyaz eşyalarda ve kol saatlerinin içinde de yüklü olabilir.
+                </p>
+            </div>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4 section-title text-gray-700">Tarihsel Gelişim</h2>
+                <div class="flex flex-col md:flex-row items-start md:space-x-6">
+                    <div class="md:w-2/3">
+                        <p class="text-gray-600 mb-3 leading-relaxed content-text">Tarih içerisinde dört temel işletim sistemi neslinden söz edilir. Bunlar:</p>
+                        <ul class="custom-list text-gray-600 space-y-1 pl-0 content-text">
+                            <li><strong>I. Nesil İşletim Sistemi (1940-1954)</strong> – Vakum Tüpleri</li>
+                            <li><strong>II. Nesil İşletim Sistemi (1955-1964)</strong> – Transistörler ve Yığın İşlem (Batch Processing)</li>
+                            <li><strong>III. Nesil İşletim Sistemi (1965-1979)</strong> – Entegre Devreler ve Çoklu Programlama</li>
+                            <li><strong>IV. Nesil İşletim Sistemi (1980 - – )</strong> – Kişisel Bilgisayarlar</li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/3 mt-4 md:mt-0">
+                        <img src="img/bilgisayar2.jpg" alt="Eski Bilgisayarlar" class="w-full h-auto object-cover rounded-md shadow-md" onerror="this.onerror=null;this.src='https://placehold.co/250x200/EFEFEF/AAAAAA?text=Resim+Yüklenemedi&font=Inter';">
+                        <p class="image-caption">İşletim sistemlerinin evrimi.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-3 section-title text-gray-700">İşletim Sistemi Mantıksal Yapısı</h2>
+                <p class="text-gray-600 mb-3 leading-relaxed content-text">İşletim sisteminin mantıksal yapısını açıklamak için dört temel unsurdan bahsedebiliriz:</p>
+                <ul class="custom-list text-gray-600 space-y-1 pl-0 content-text">
+                    <li><strong>Aygıt Yönetimi (Device Management)</strong></li>
+                    <li><strong>Bellek Yönetimi (Memory Management)</strong></li>
+                    <li><strong>Dosya Yönetimi (File Management)</strong></li>
+                    <li><strong>İşlem Yönetimi (Process Management)</strong></li>
+                </ul>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-3 section-title text-gray-700">Açık Kaynak Kodlu İşletim Sistemleri</h2>
+                <p class="text-gray-600 mb-3 leading-relaxed content-text">Açık kaynak kodlu yazılımlar kullanıcıya yazılım kodlarını değiştirme özgürlüğünü sağlar. Topluluktaki uzmanlar işletim sistemindeki güvenlik açıklarını kapatırlar. Bundan dolayı açık kaynak kodlu yazılımlar daha güvenilir, hızlı ve sağlamdır. Yazılımlar uyarlanabilir, sağlam, hızlı ve güvenlidir. Açık kaynak kodlu işletim sistemlerine örnek olarak Ubuntu, Linux, Pardus, Debian gösterilebilir.</p>
+                <h3 class="text-xl font-semibold mb-2 content-title text-gray-700">Açık Kaynak Kodlu Yazılım Kullanma Nedenleri:</h3>
+                <ul class="custom-list text-gray-600 space-y-1 pl-0 content-text mb-4">
+                    <li><strong>Özgürlük ve Esneklik:</strong> İşletim sistemindeki kaynak kodlara erişebilir ve dilediğiniz gibi özelleştirebilirsiniz.</li>
+                    <li><strong>Düşük Maliyet:</strong> Birçok açık kaynak kodlu işletim sistemi ücretsizdir, herhangi bir lisansa para vermeden kullanabilirsiniz.</li>
+                    <li><strong>Topluluk Desteği:</strong> Açık kaynaklı yazılımlar genellikle büyük bir topluluk tarafından yapılır, bu sayede daha geniş bir destek ağına sahip olursunuz.</li>
+                    <li><strong>Güvenlik:</strong> Kaynak kodunun herkese açık olması, güvenlik açıklarının hızlıca tespit edilmesine ve düzeltilmesine olanak tanır.</li>
+                </ul>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 content-title text-gray-700">Linux</h3>
+                        <p class="text-gray-600 leading-relaxed content-text">Linux, en popüler açık kaynak kodlu işletim sistemidir ve Linus Torvalds tarafından 1991 yılında geliştirilmiştir. Linux, sunuculardan masaüstü bilgisayarlara kadar birçok platformda çalışır. Kullanıcılar farklı dağıtımlar arasında seçim yapabilir (örneğin, Ubuntu, Fedora, Debian, Arch Linux vb.). Linux, hem sunucularda, süper bilgisayarlardan mobil cihazlara kadar geniş bir ürün yelpazesine sahiptir.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 content-title text-gray-700">BSD</h3>
+                        <p class="text-gray-600 leading-relaxed content-text">BSD tabanlı işletim sistemleri, özellikle güvenlik ve ağ özellikleri ile tanınır. Stabildir ve güçlü ağ ve güvenlik özelliklerini kapsar. Ağ sunucularında, güvenlik odaklı sistemlerde, depolama sunucuları ve veritabanı sunucuları gibi yüksek performans gerektiren ortamlarda kullanılır.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 content-title text-gray-700">Haiku</h3>
+                        <p class="text-gray-600 leading-relaxed content-text">Haiku, açık kaynaklı, modern ve hafif bir işletim sistemidir. Basit bir arayüze sahiptir ve özellikle medya işleme ve multimedya uygulamaları için optimize edilmiştir. Kişisel bilgisayarlar ve medya odaklı uygulamalar kullanım alanlarındandır.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 content-title text-gray-700">ReactOS</h3>
+                        <p class="text-gray-600 leading-relaxed content-text">ReactOS, Windows uyumlu bir açık kaynak işletim sistemidir. Windows uygulamalarını ve sürücülerini çalıştırabilmeyi amaçlayan bir projedir. Bu bağlamda Windows yazılımı kullanmak isteyen kullanıcıların tercihidir.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-semibold mb-3 section-title text-gray-700">Kapalı Kaynak Kodlu İşletim Sistemleri</h2>
+                <p class="text-gray-600 mb-3 leading-relaxed content-text">Bilişim uzmanları tarafından kaynak kodu paylaşılmayan işletim sistemleridir. Ücretli olarak bilgisayarınıza yüklü olarak gelir ya da kullanıcılar işletim sistemlerinin kendi web sitelerinden ücret bedelini ödeyerek erişebilirler. Herhangi bir kaynak koduna ulaşamadığınız için yazılım üzerinde üreticinin verdiği izinler dışında değişiklik yapamazsınız.</p>
+                <h3 class="text-xl font-semibold mb-2 content-title text-gray-700">Kapalı Kaynak Kodlu İşletim Sistemi Tercih Etme Nedenleri:</h3>
+                <ul class="custom-list text-gray-600 space-y-1 pl-0 content-text mb-4">
+                    <li><strong>Kullanıcı Dostu Tasarım ve Destek:</strong> Bu tür genellikle kapsamlı ve profesyonel destek sunar.</li>
+                    <li><strong>Yazılım Uyumluluğu ve Ekosistem:</strong> Kapalı kaynaklı işletim sistemleri, genellikle daha geniş bir yazılım ve donanım uyumluluğuna sahiptir.</li>
+                    <li><strong>Güvenlik ve Stabilite:</strong> Güvenlik açıklarını hızlı bir şekilde kapatmak için otomatik güncellemeler sunar.</li>
+                    <li><strong>Kurumsal Çözümler ve Entegrasyon:</strong> Windows Server ve macOS Enterprise gibi platformlar büyük ölçekli işletmelerin gereksinimlerini karşılamak için özellikler sunar.</li>
+                    <li><strong>Uzman Desteği ve Eğitim:</strong> Kapalı kaynak kodlu sistemler profesyonel destek hizmetleri ve eğitim programları sunar.</li>
+                    <li><strong>Daha Az Teknik Bilgi Gereksinimi:</strong> Kapalı kaynaklı işletim sistemleri genellikle daha kullanıcı dostudur ve daha az teknik bilgi gerektirir.</li>
+                    <li><strong>Ticari Yazılım Desteği ve Lisanslar:</strong> Özel yazılım veya uygulamalar, belirli bir işletim sistemi için geliştirilmiş olabilir.</li>
+                </ul>
+                 <div class="grid md:grid-cols-2 gap-6">
+                    <div class="mb-6 md:mb-0">
+                        <h3 class="text-xl font-semibold mb-2 content-title text-gray-700">Windows</h3>
+                        <p class="text-gray-600 mb-3 leading-relaxed content-text">İlk kez 1985 yılında Windows 1.0 olarak piyasaya sürülmüş ve o zamandan beri birçok sürümüyle ev kullanıcıları, iş dünyası, eğitim kurumları ve daha pek çok alanda yaygın olarak kullanılmıştır. Windows, genellikle kullanıcı dostu arayüzü, geniş yazılım desteği, donanım uyumluluğu ve ticari özellikleri ile bilinir.</p>
+                        <h4 class="text-lg font-semibold mb-2 content-title text-gray-700">Windows'un Popüler Özellikleri:</h4>
+                        <ul class="custom-list text-gray-600 space-y-1 pl-0 content-text">
+                            <li><strong>Kullanıcı Dostu Arayüz:</strong> Windows, genellikle kullanıcı dostu bir arayüze sahip olmasıyla bilinir.</li>
+                            <li><strong>Donanım ve Yazılım Uyumluluğu:</strong> Microsoft ve üçüncü taraf geliştiriciler, Windows için uygulamalar ve oyunlar geliştirir.</li>
+                            <li><strong>Güvenlik Özellikleri:</strong>
+                                <ul class="custom-list text-gray-600 space-y-1 pl-4 mt-1 content-text">
+                                    <li>Windows Defender: Dahili antivirüs ve zararlı yazılım engelleyici.</li>
+                                    <li>Bitlocker: Veri şifreleme aracı, disk şifrelemesi sağlar.</li>
+                                    <li>Windows Hello: Yüz tanıma veya parmak izi ile kimlik doğrulama.</li>
+                                    <li>Firewall ve Windows Update: Güvenlik yamaları ve güncellemeleri otomatik olarak indirir.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Sanal Masaüstü:</strong> Bu özellik sayesinde birden fazla masaüstü oluşturulabilir.</li>
+                            <li><strong>Farklı Sürüm Çeşitleri:</strong> Windows, farklı kullanım ihtiyaçlarına göre sürümler sunar (Windows Home, Pro, Enterprise, Education vb.).</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 content-title text-gray-700">macOS</h3>
+                        <p class="text-gray-600 mb-3 leading-relaxed content-text">Apple tarafından geliştirilen ve Macintosh bilgisayarlarında (Mac) çalışan işletim sistemidir. İlk olarak 1984 yılında piyasaya sürülen macOS, 2001 yılında Mac OS X olarak yeniden yapılandırıldı ve 2016'dan itibaren macOS adıyla anılmaya başlandı. macOS, özellikle sade, şık arayüzü, güvenliği, uyumluluğu ve stabilitesi ile tanınır.</p>
+                        <h4 class="text-lg font-semibold mb-2 content-title text-gray-700">macOS'un Avantajları:</h4>
+                        <ul class="custom-list text-gray-600 space-y-1 pl-0 content-text">
+                            <li><strong>Kullanıcı Dostu ve Şık Tasarım:</strong> macOS, görsel olarak çekici ve sezgisel bir tasarıma sahiptir.</li>
+                            <li><strong>Stabilite ve Güvenlik:</strong> Apple, macOS’un güvenliğini ve stabilitesini en üst düzeyde tutar.</li>
+                            <li><strong>Apple Ekosistemi ile Entegrasyon:</strong> iPhone, iPad, Apple Watch ve diğer Apple cihazlarıyla mükemmel bir entegrasyon sağlar.</li>
+                            <li><strong>Yüksek Performans ve Verimlilik:</strong> Apple'ın özel donanımı ile optimize edilen macOS, profesyonel yazılımlar ve grafik yoğun uygulamalar için performans avantajı sağlar.</li>
+                            <li><strong>Yazılım Güncellemeleri:</strong> Apple, düzenli ve güvenli yazılım güncellemeleri sunar.</li>
+                            <li><strong>Yüksek Kaliteli Yerleşik Yazılımlar:</strong> Fotoğraflar, Safari, Mail, iWork gibi güçlü yerleşik uygulamalar sunar.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="mt-8 pt-6 border-t border-gray-300 text-center">
+                <a href="index.html" class="inline-block bg-red-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-red-600 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    <i class="fas fa-arrow-left mr-2"></i> Ana Sayfaya Dön
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <div class="container mx-auto px-4">
+            <p>&copy; <span id="currentYear"></span> FtechTalks. Tüm hakları saklıdır.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-youtube fa-lg"></i></a>
+                <a href="https://github.com/fa2uk" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="https://www.instagram.com/fa2uk0/" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://tr.linkedin.com/in/%C3%B6mer-faruk-arang%C3%BCl-40201b325" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
