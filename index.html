@@ -3,131 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FtechTalks </title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2XXCKM6CT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-J2XXCKM6CT');
-</script>
+    <title>Liste Karşılaştırma Aracı</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Source Serif 4', 'serif'],
-                    },
-                }
-            }
-        }
-    </script>
     <style>
-        /* Özel stiller gerekirse buraya eklenebilir */
-        body {
-            font-family: 'Inter', sans-serif; /* Varsayılan font */
+        .result-card {
+            transition: all 0.3s ease;
         }
-        .content-title {
-            font-family: 'Source Serif 4', serif; /* Başlıklar için özel font */
-        }
-        .content-text {
-             font-family: 'Inter', sans-serif;
+        .result-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Liste Karşılaştırma Aracı</h1>
+            <p class="text-gray-600">İki listeyi karşılaştırın ve farkları görün</p>
+        </div>
 
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center">
-            <a href="index.html" class="mb-2 sm:mb-0">
-                <img src="img/logo3.png" alt="FtechTalks Logo" class="h-10">
-            </a>
-            <div class="flex space-x-4">
-                <a href="#" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-youtube fa-lg"></i></a>
-                <a href="https://github.com/fa2uk" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-github fa-lg"></i></a>
-                <a href="#" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-twitter fa-lg"></i></a>
-                <a href="https://www.instagram.com/fa2uk0/" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-instagram fa-lg"></i></a>
-                <a href="https://tr.linkedin.com/in/%C3%B6mer-faruk-arang%C3%BCl-40201b325" class="text-red-500 hover:text-red-700 transition-colors duration-300"><i class="fab fa-linkedin fa-lg"></i></a>
+        <!-- Input Form -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- List A -->
+                <div>
+                    <label for="listA" class="block text-sm font-medium text-gray-700 mb-2">
+                        A Listesi
+                    </label>
+                    <textarea 
+                        id="listA" 
+                        rows="8" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        placeholder="A listesindeki elemanları girin (her satıra bir eleman)..."
+                    ></textarea>
+                </div>
+
+                <!-- List B -->
+                <div>
+                    <label for="listB" class="block text-sm font-medium text-gray-700 mb-2">
+                        B Listesi
+                    </label>
+                    <textarea 
+                        id="listB" 
+                        rows="8" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        placeholder="B listesindeki elemanları girin (her satıra bir eleman)..."
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 mt-6">
+                <button 
+                    id="compareBtn" 
+                    class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                >
+                    🔍 Listeleri Karşılaştır
+                </button>
+                <button 
+                    id="clearBtn" 
+                    class="flex-1 bg-gray-500 hover:bg-gray-600 text-white font-medium py-3 px-6 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                >
+                    🗑️ Temizle
+                </button>
             </div>
         </div>
-    </header>
 
-    <main class="container mx-auto px-4 py-8">
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col md:flex-row items-start">
-            <img src="img/isletim3.png"
-                 alt="İşletim Sistemleri"
-                 class="w-full md:w-1/3 h-auto object-cover rounded-md mb-4 md:mb-0 md:mr-6"
-                 onerror="this.onerror=null;this.src='https://placehold.co/350x200/EFEFEF/AAAAAA?text=Resim+Yüklenemedi';">
-            <div class="flex-1">
-                <h2 class="text-2xl font-semibold mb-3 content-title text-gray-700">İşletim Sistemleri: Yapıları, Türleri ve Kullanım Alanları</h2>
-                <p class="text-gray-600 mb-4 leading-relaxed content-text">
-                    İşletim sistemi, bir bilgisayar programıdır. Temel görevi bilgisayar parçaları arasındaki ilişkiyi düzenlemek ve aralarında bilgi alışverişi yapmasını sağlamaktır. Yani bir işletim sistemi; temel sistem işlemlerinden, uygulama programlarını çalıştırmaktan ve bilgisayar donanımının doğrudan denetimi ve yönetiminden sorumlu olan bir sistem yazılımıdır.
-                </p>
-                <a href="isletim.html" class="inline-block bg-red-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-red-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                    Devamını Oku <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+        <!-- Results Section -->
+        <div id="results" class="hidden">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Karşılaştırma Sonuçları</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Only in A -->
+                <div class="result-card bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+                        <h3 class="text-lg font-semibold text-blue-800">Sadece A'da Olanlar</h3>
+                    </div>
+                    <div id="onlyInA" class="text-sm text-blue-700 space-y-1">
+                        <!-- Elements only in A will be displayed here -->
+                    </div>
+                    <div class="mt-3 text-xs text-blue-600">
+                        Toplam: <span id="onlyACount">0</span> eleman
+                    </div>
+                </div>
+
+                <!-- Only in B -->
+                <div class="result-card bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
+                        <h3 class="text-lg font-semibold text-purple-800">Sadece B'de Olanlar</h3>
+                    </div>
+                    <div id="onlyInB" class="text-sm text-purple-700 space-y-1">
+                        <!-- Elements only in B will be displayed here -->
+                    </div>
+                    <div class="mt-3 text-xs text-purple-600">
+                        Toplam: <span id="onlyBCount">0</span> eleman
+                    </div>
+                </div>
+
+                <!-- All Differences -->
+                <div class="result-card bg-red-50 border border-red-200 rounded-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
+                        <h3 class="text-lg font-semibold text-red-800">Tüm Farklılıklar</h3>
+                    </div>
+                    <div id="allDifferences" class="text-sm text-red-700 space-y-1">
+                        <!-- All different elements will be displayed here -->
+                    </div>
+                    <div class="mt-3 text-xs text-red-600">
+                        Toplam: <span id="allDiffCount">0</span> eleman
+                    </div>
+                </div>
             </div>
         </div>
-        <hr class="my-8 border-gray-300">
-
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col md:flex-row items-start">
-            <img src="img/git.jpg"
-                 alt="Git Nedir?"
-                 class="w-full md:w-1/3 h-auto object-cover rounded-md mb-4 md:mb-0 md:mr-6"
-                 onerror="this.onerror=null;this.src='https://placehold.co/350x200/EFEFEF/AAAAAA?text=Resim+Yüklenemedi';">
-            <div class="flex-1">
-                <h2 class="text-2xl font-semibold mb-3 content-title text-gray-700">GİT NEDİR?</h2>
-                <p class="text-gray-600 mb-4 leading-relaxed content-text">
-                    Git, bir versiyon kontrol sistemi (VCS) olup, yazılım geliştirme süreçlerinde kodun geçmişini izlemeye, yönetmeye ve farklı sürümlerini kaydetmeye yarar. Git, dağıtık bir yapıya sahiptir, yani her geliştirici kendi bilgisayarında tam bir depo (repository) kopyasına sahip olur. Bu sayede, birden fazla kişi aynı proje üzerinde aynı anda çalışabilir, değişiklikler kolayca izlenebilir ve bir hata durumunda geçmişe dönülerek geri alınabilir.
-                </p>
-                <a href="git.html" class="inline-block bg-red-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-red-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                    Devamını Oku <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-        </div>
-        <hr class="my-8 border-gray-300">
-
-        <div class="bg-white rounded-lg shadow-lg p-6 mb-8 flex flex-col md:flex-row items-start">
-            <img src="img/trafik.jpg"
-                 alt="Trafikte Güvenli Sürüş Rehberi"
-                 class="w-full md:w-1/3 h-auto object-cover rounded-md mb-4 md:mb-0 md:mr-6"
-                 onerror="this.onerror=null;this.src='https://placehold.co/350x200/EFEFEF/AAAAAA?text=Resim+Yüklenemedi';">
-            <div class="flex-1">
-                <h2 class="text-2xl font-semibold mb-3 content-title text-gray-700">TRAFİKTE GÜVENLİ SÜRÜŞ REHBERİ</h2>
-                <p class="text-gray-600 mb-4 leading-relaxed content-text">
-                    Daha güvenli bir sürüş için dikkate almanız gereken birçok önemli faktör vardır. Bu faktörler, sadece trafikteki davranışlarınızı değil, aynı zamanda aracınızın durumu, çevresel koşullar ve sürüş tekniklerinizi de kapsar. İşte güvenli sürüş için bilmeniz gerekenler.
-                </p>
-                <a href="trafik.html" class="inline-block bg-red-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-red-600 transition-colors duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                    Devamını Oku <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-        </div>
-        <hr class="my-8 border-gray-300">
-    </main>
-
-    <footer class="bg-gray-800 text-white py-8 text-center">
-        <div class="container mx-auto px-4">
-            <p>&copy; <span id="currentYear"></span> FtechTalks. Tüm hakları saklıdır.</p>
-            <div class="mt-4 flex justify-center space-x-4">
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-youtube fa-lg"></i></a>
-                <a href="https://github.com/fa2uk" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-github fa-lg"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-twitter fa-lg"></i></a>
-                <a href="https://www.instagram.com/fa2uk0/" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-instagram fa-lg"></i></a>
-                <a href="https://tr.linkedin.com/in/%C3%B6mer-faruk-arang%C3%BCl-40201b325" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin fa-lg"></i></a>
-            </div>
-        </div>
-    </footer>
+    </div>
 
     <script>
-        // JavaScript ile mevcut yılı footer'a ekleme
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
 
+        // DOM elements
+        const listAInput = document.getElementById('listA');
+        const listBInput = document.getElementById('listB');
+        const compareBtn = document.getElementById('compareBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const resultsDiv = document.getElementById('results');
+
+        // Event listeners
+        compareBtn.addEventListener('click', compareLists);
+        clearBtn.addEventListener('click', clearAll);
+
+        // Function to parse list from textarea
+        function parseList(text) {
+            return text
+                .split('\n')
+                .map(item => item.trim())
+                .filter(item => item.length > 0);
+        }
+
+        // Function to compare lists
+        function compareLists() {
+            const listA = parseList(listAInput.value);
+            const listB = parseList(listBInput.value);
+
+            if (listA.length === 0 && listB.length === 0) {
+                alert('Lütfen en az bir listeye eleman girin!');
+                return;
+            }
+
+            // Find elements only in A
+            const onlyInA = listA.filter(item => !listB.includes(item));
+
+            // Find elements only in B
+            const onlyInB = listB.filter(item => !listA.includes(item));
+
+            // Find all differences (combine onlyInA and onlyInB)
+            const allDifferences = [...onlyInA, ...onlyInB];
+
+            // Display results
+            displayResults(onlyInA, onlyInB, allDifferences);
+        }
+
+        // Function to display results
+        function displayResults(onlyInA, onlyInB, allDifferences) {
+            // Show results section
+            resultsDiv.classList.remove('hidden');
+
+            // Display only in A
+            const onlyInADiv = document.getElementById('onlyInA');
+            const onlyACount = document.getElementById('onlyACount');
+            if (onlyInA.length > 0) {
+                onlyInADiv.innerHTML = onlyInA.map(item => `<div class="bg-blue-100 px-2 py-1 rounded">${item}</div>`).join('');
+            } else {
+                onlyInADiv.innerHTML = '<div class="text-gray-500 italic">A listesinde özel eleman yok</div>';
+            }
+            onlyACount.textContent = onlyInA.length;
+
+            // Display only in B
+            const onlyInBDiv = document.getElementById('onlyInB');
+            const onlyBCount = document.getElementById('onlyBCount');
+            if (onlyInB.length > 0) {
+                onlyInBDiv.innerHTML = onlyInB.map(item => `<div class="bg-purple-100 px-2 py-1 rounded">${item}</div>`).join('');
+            } else {
+                onlyInBDiv.innerHTML = '<div class="text-gray-500 italic">B listesinde özel eleman yok</div>';
+            }
+            onlyBCount.textContent = onlyInB.length;
+
+            // Display all differences
+            const allDifferencesDiv = document.getElementById('allDifferences');
+            const allDiffCount = document.getElementById('allDiffCount');
+            if (allDifferences.length > 0) {
+                allDifferencesDiv.innerHTML = allDifferences.map(item => `<div class="bg-red-100 px-2 py-1 rounded">${item}</div>`).join('');
+            } else {
+                allDifferencesDiv.innerHTML = '<div class="text-gray-500 italic">Hiç farklılık bulunamadı</div>';
+            }
+            allDiffCount.textContent = allDifferences.length;
+
+            // Scroll to results
+            resultsDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Function to clear all inputs
+        function clearAll() {
+            listAInput.value = '';
+            listBInput.value = '';
+            resultsDiv.classList.add('hidden');
+            listAInput.focus();
+        }
+
+
+        // Auto-focus on first input
+        listAInput.focus();
+    </script>
 </body>
 </html>
